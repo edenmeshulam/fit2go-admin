@@ -4,7 +4,7 @@ const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3001/api";
 
 export const authProvider: AuthProvider = {
   login: async ({ username, password }) => {
-    const response = await fetch(`${apiUrl}/users/login`, {
+    const response = await fetch(`${apiUrl}/auth/login`, {
       method: "POST",
       body: JSON.stringify({ email: username, password }),
       headers: new Headers({ "Content-Type": "application/json" }),

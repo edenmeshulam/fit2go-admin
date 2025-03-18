@@ -19,7 +19,7 @@ import {
   TextInput,
   TopToolbar,
 } from "react-admin";
-import { UserRole } from "../../interfaces/role";
+import { UserRole, UserRoleLabel } from "../../interfaces/role";
 
 const userFilters = [
   <TextInput source="q" label="Search" alwaysOn />,
@@ -27,9 +27,10 @@ const userFilters = [
     source="role"
     label="Role"
     choices={[
-      { id: UserRole.USER, name: "User" },
-      { id: UserRole.BUSINESS_OWNER, name: "Business Owner" },
-      { id: UserRole.ADMIN, name: "Admin" },
+      { id: UserRole.USER, name: UserRoleLabel.USER },
+      { id: UserRole.TRAINER, name: UserRoleLabel.TRAINER },
+      { id: UserRole.BUSINESS_OWNER, name: UserRoleLabel.BUSINESS_OWNER },
+      { id: UserRole.ADMIN, name: UserRoleLabel.ADMIN },
     ]}
   />,
 ];
@@ -51,9 +52,10 @@ export const UserList = () => (
       <SelectField
         source="role"
         choices={[
-          { id: UserRole.USER, name: "User" },
-          { id: UserRole.BUSINESS_OWNER, name: "Business Owner" },
-          { id: UserRole.ADMIN, name: "Admin" },
+          { id: UserRole.USER, name: UserRoleLabel.USER },
+          { id: UserRole.TRAINER, name: UserRoleLabel.TRAINER },
+          { id: UserRole.BUSINESS_OWNER, name: UserRoleLabel.BUSINESS_OWNER },
+          { id: UserRole.ADMIN, name: UserRoleLabel.ADMIN },
         ]}
       />
       <BooleanField source="isActive" />
@@ -71,12 +73,15 @@ export const UserCreate = () => (
       <TextInput source="lastName" />
       <TextInput source="email" type="email" />
       <TextInput source="password" type="password" />
+      <TextInput source="governmentId" type="id" />
+      <TextInput source="phone" type="phone" />
       <SelectInput
         source="role"
         choices={[
-          { id: UserRole.USER, name: "User" },
-          { id: UserRole.BUSINESS_OWNER, name: "Business Owner" },
-          { id: UserRole.ADMIN, name: "Admin" },
+          { id: UserRole.USER, name: UserRoleLabel.USER },
+          { id: UserRole.TRAINER, name: UserRoleLabel.TRAINER },
+          { id: UserRole.BUSINESS_OWNER, name: UserRoleLabel.BUSINESS_OWNER },
+          { id: UserRole.ADMIN, name: UserRoleLabel.ADMIN },
         ]}
       />
       <ImageInput source="pictureUrl" label="Profile Picture" accept="image/*">
@@ -96,9 +101,10 @@ export const UserEdit = () => (
       <SelectInput
         source="role"
         choices={[
-          { id: UserRole.USER, name: "User" },
-          { id: UserRole.BUSINESS_OWNER, name: "Business Owner" },
-          { id: UserRole.ADMIN, name: "Admin" },
+          { id: UserRole.USER, name: UserRoleLabel.USER },
+          { id: UserRole.TRAINER, name: UserRoleLabel.TRAINER },
+          { id: UserRole.BUSINESS_OWNER, name: UserRoleLabel.BUSINESS_OWNER },
+          { id: UserRole.ADMIN, name: UserRoleLabel.ADMIN },
         ]}
       />
       <ImageInput source="pictureUrl" label="Profile Picture" accept="image/*">

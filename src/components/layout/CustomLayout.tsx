@@ -332,12 +332,9 @@ export const CustomLayout = (props: any) => {
           flex: 1,
           flexGrow: 1,
           marginTop: "64px",
+          marginLeft: { sm: `${DRAWER_WIDTH}px` },
           width: { sm: `calc(100% - ${DRAWER_WIDTH}px)` },
           backgroundColor: theme.palette.mode === "dark" ? "#0A1018" : "#F1F5F9",
-          transition: theme.transitions.create(["width", "margin"], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-          }),
         },
         "& .RaLayout-appFrame": {
           marginTop: 0,
@@ -345,10 +342,6 @@ export const CustomLayout = (props: any) => {
           flexDirection: "column",
           flexGrow: 1,
           marginLeft: 0,
-          transition: theme.transitions.create(["margin"], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-          }),
         },
       }}
     />
