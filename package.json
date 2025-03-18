@@ -21,6 +21,7 @@
     "react-dom": "^18.2.0",
     "react-redux": "^9.2.0",
     "react-scripts": "5.0.1",
+    "recharts": "^2.15.1",
     "redux-persist": "^6.0.0",
     "typescript": "^5.3.3",
     "web-vitals": "^3.5.2"
