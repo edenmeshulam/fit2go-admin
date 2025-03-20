@@ -9,10 +9,25 @@ import { authProvider } from "./authProvider";
 import { BookingEdit, BookingList } from "./components/bookings";
 import { CreditCardList } from "./components/credit-cards";
 import { Dashboard } from "./components/dashboard/Dashboard";
-import { BookingIcon, BusinessIcon, CreditCardIcon, PackageIcon, PurchaseIcon, ReviewIcon, ServiceIcon, UserIcon } from "./components/icons";
+import {
+  BookingIcon,
+  BusinessIcon,
+  CreditCardIcon,
+  NotificationIcon,
+  OtpIcon,
+  PackageIcon,
+  PurchaseIcon,
+  RefreshTokenIcon,
+  ReviewIcon,
+  ServiceIcon,
+  UserIcon,
+} from "./components/icons";
 import { CustomLayout } from "./components/layout/CustomLayout";
+import { NotificationEdit, NotificationList, PushNotificationCreate } from "./components/notifications";
+import { OtpEdit, OtpList } from "./components/otps";
 import { PackageCreate, PackageEdit, PackageList } from "./components/packages";
 import { PurchaseList } from "./components/purchases";
+import { RefreshTokenEdit, RefreshTokenList } from "./components/refresh-tokens";
 import { ReviewEdit, ReviewList } from "./components/reviews";
 import { ServiceCreate, ServiceEdit, ServiceList } from "./components/services";
 import { UserCreate, UserEdit, UserList } from "./components/users";
@@ -52,6 +67,15 @@ const App = () => {
               <Resource name="reviews" list={ReviewList} edit={ReviewEdit} icon={ReviewIcon} />
               <Resource name="credit-cards" list={CreditCardList} icon={CreditCardIcon} />
               <Resource name="purchases" list={PurchaseList} icon={PurchaseIcon} />
+              <Resource name="refresh-tokens" list={RefreshTokenList} edit={RefreshTokenEdit} icon={RefreshTokenIcon} />
+              <Resource name="otps" list={OtpList} edit={OtpEdit} icon={OtpIcon} />
+              <Resource
+                name="notifications"
+                list={NotificationList}
+                create={PushNotificationCreate}
+                edit={NotificationEdit}
+                icon={NotificationIcon}
+              />
             </Admin>
           </ThemeProvider>
         )}

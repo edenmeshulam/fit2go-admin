@@ -5,8 +5,11 @@ import {
   Brightness4 as DarkModeIcon,
   Brightness7 as LightModeIcon,
   Menu as MenuIcon,
+  Notifications as NotificationIcon,
+  Lock as OtpIcon,
   Inventory as PackageIcon,
   ShoppingCart as PurchaseIcon,
+  Refresh as RefreshTokenIcon,
   Star as ReviewIcon,
   LocalOffer as ServiceIcon,
   Settings as SettingsIcon,
@@ -119,6 +122,9 @@ const CustomMenu = () => {
         <RaMenu.Item to="/reviews" primaryText="Reviews" leftIcon={<ReviewIcon />} />
         <RaMenu.Item to="/credit-cards" primaryText="Credit Cards" leftIcon={<CreditCardIcon />} />
         <RaMenu.Item to="/purchases" primaryText="Purchases" leftIcon={<PurchaseIcon />} />
+        <RaMenu.Item to="/notifications" primaryText="Notifications" leftIcon={<NotificationIcon />} />
+        <RaMenu.Item to="/otps" primaryText="OTPs" leftIcon={<OtpIcon />} />
+        <RaMenu.Item to="/refresh-tokens" primaryText="Refresh Tokens" leftIcon={<RefreshTokenIcon />} />
       </RaMenu>
     </Box>
   );
@@ -332,7 +338,7 @@ export const CustomLayout = (props: any) => {
           flex: 1,
           flexGrow: 1,
           marginTop: "64px",
-          marginLeft: { sm: `${DRAWER_WIDTH}px` },
+          // marginLeft: { sm: `${DRAWER_WIDTH}px` },
           width: { sm: `calc(100% - ${DRAWER_WIDTH}px)` },
           backgroundColor: theme.palette.mode === "dark" ? "#0A1018" : "#F1F5F9",
         },

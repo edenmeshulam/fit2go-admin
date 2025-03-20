@@ -5,10 +5,10 @@ import { CreateButton, DatagridConfigurable, ExportButton, FilterButton, List, L
 interface CustomListProps extends Omit<ListProps, "children"> {
   children: ReactNode;
   title: string;
-  filters?: ReactElement | ReactElement[];
+  filters?: ReactElement[];
 }
 
-const ListActions = ({ filters }: { filters?: ReactElement | ReactElement[] }) => (
+const ListActions = ({ filters }: { filters?: ReactElement[] }) => (
   <TopToolbar
     sx={{
       gap: 1,
@@ -17,7 +17,7 @@ const ListActions = ({ filters }: { filters?: ReactElement | ReactElement[] }) =
       },
     }}
   >
-    <FilterButton />
+    <FilterButton filters={filters} />
     <CreateButton />
     <ExportButton />
     <SelectColumnsButton />
@@ -97,7 +97,7 @@ export const CustomList = ({ children, title, filters, ...rest }: CustomListProp
           >
             <List
               {...rest}
-              actions={<ListActions filters={filters} />}
+              actions={false}
               filters={filters}
               sx={{
                 "& .RaList-main": {
